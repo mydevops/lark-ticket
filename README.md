@@ -4,7 +4,7 @@
     <p align="center">
         <img src="https://img.shields.io/badge/python-3.12-blue" alt="">
         <a href="https://github.com/astral-sh/ruff"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/ruff/main/assets/badge/v2.json" alt="Ruff" style="max-width:100%;"></a>
-        <img src="https://img.shields.io/github/license/mydevops/lark-ticket" alt="">
+        <img alt="GitHub License" src="https://img.shields.io/github/license/mydevops/lark-ticket">
     </p>
 </div>
 
