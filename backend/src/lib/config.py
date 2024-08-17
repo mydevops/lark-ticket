@@ -63,7 +63,6 @@ class Lark(BaseModel):
     """飞书配置."""
 
     assistant_user_id: str
-    domain: str
     app_id: str
     app_secret: str
     encrypt_key: str

@@ -15,10 +15,7 @@ def make_app() -> FastAPI:
     extension.init()
 
     # 创建 FastAPI 应用
-    app = FastAPI(**config.app)
-
-    # 注册事件
-    event.register(app)
+    app = FastAPI(**config.app, lifespan=event.lifespan)
 
     # 注册中间件
     middleware.register(app)

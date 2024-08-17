@@ -110,8 +110,6 @@ class DatabaseSessionManager:
             except Exception:
                 await connection.rollback()
                 raise
-            finally:
-                await connection.close()
 
     @contextlib.asynccontextmanager
     async def session(self) -> AsyncIterator[AsyncSession]:

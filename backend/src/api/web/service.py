@@ -66,7 +66,7 @@ async def create_config(session: AsyncSession, body: schema.Config):
         )
     )
 
-    await lark_api.subscribe_approval_callback_event(body.approval_code)
+    # await lark_api.subscribe_approval_callback_event(body.approval_code)
 
     await session.commit()
 
@@ -99,7 +99,7 @@ async def delete_config(session: AsyncSession, approval_code: str) -> None:
 
     await session.execute(delete(ConfigModel).where(ConfigModel.approval_code == approval_code))
 
-    await lark_api.unsubscribe_approval_callback_event(approval_code)
+    # await lark_api.unsubscribe_approval_callback_event(approval_code)
 
     await session.commit()
 
