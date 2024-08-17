@@ -8,14 +8,9 @@
     </p>
 </div>
 
----
-
 > lark-ticket 是「飞书」工单的增强功能。增加审批单提交时检查、结束时调用 API、审批字段转 API 字段等功能。
 
 ## 为什么会有这个项目？
-
----
-
 ### 1. 无检查、执行节点
 举个 🌰【管理后台权限申请】
 
@@ -68,8 +63,6 @@ API 执行
 
 ## 必要配置
 
----
-
 ### 开发者后台
 假设你的域名是`$domain`。
 
@@ -107,8 +100,6 @@ LARK_EXECUTE_NODE_NAME = "execute_node"
 将【审批人去重】修改为【仅针对连续审批的节点自动同意】。
 
 ## 配置文件
-
----
 
 默认文件模版在`backend/etc/lark-ticket.conf`。
 
@@ -171,15 +162,11 @@ sentry_dsn         -- dsn
 
 ## 界面
 
----
-
 ### 首页
 
 ### 详情页
 
 ## 开发
-
----
 
 ### 后端
 启动项目
@@ -195,7 +182,5 @@ rye run lint
 
 
 ## License
-
----
 
 [MIT License](https://github.com/mydevops/lark-ticket/blob/main/LICENSE)
