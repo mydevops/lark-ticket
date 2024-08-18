@@ -85,6 +85,8 @@ $domain/api/v1/lark/callback
 
 ### 审批配置
 #### ③ 流程设计
+必须保证检查节点和执行节点在流程的开头和结尾。
+
 ![](docs/image/process-design.png)
 
 注册一个【审批助手】的飞书账号。将【检查节点】和【执行节点】的审批人设置为【审批助手】。审批节点的名字默认是`check_node`和`execute_node`可以通过`const.py`文件来修改值。
@@ -162,12 +164,36 @@ sentry_dsn         -- dsn
 ## 界面
 
 ### 首页
+![](docs/image/home.png)
 
 ### 详情页
+![](docs/image/detail.png)
+其中外部字段的`uri`拼接域名后放在飞书审批配置的外部选项中。
+```
+$domain/field/$uri
+```
+
+
+## API
+回调结构
+```json
+{
+    "ticket_id": "str: 工单 id",
+    "result": "bool: 检查或执行结果: True 成功 False 失败",
+    "msg": "成功提示消息",
+    "error": "错误信息"
+}
+```
+同步方式调用必须满足该格式，异步方式回调时必须满足该格式。
+
 
 ## 开发
 
 ### 后端
+安装依赖
+```
+rye sync
+```
 启动项目
 ```
 rye run dev
@@ -178,7 +204,18 @@ rye run lint
 ```
 
 ### 前端
-
+安装依赖
+```
+pnpm install
+```
+启动项目
+```
+pnpm run dev
+```
+打包
+```
+pnpm build
+```
 
 ## License
 
