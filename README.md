@@ -186,6 +186,15 @@ $domain/field/$uri
 ```
 同步方式调用必须满足该格式，异步方式回调时必须满足该格式。
 
+### 检查节点回调地址
+```
+$domain/api/v1/lark/check/callback
+```
+
+### 执行节点回调地址
+```
+$domain/api/v1/lark/execute/callback
+```
 
 ## 开发
 
