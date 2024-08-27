@@ -60,6 +60,9 @@ class LarkExternalField(BaseModel):
     """飞书外部字段调用参数."""
 
     linkage_params: dict[str, Any] = Field(default_factory=dict, description="具体参数")
+    token: str | None = Field(None, description="校验请求是否为合法来源的 token")
+    page_token: str | None = Field(None, description="分页标记，第一次请求不填，表示从头开始遍历")
+    query: str | None = Field(None, description="搜索关键词")
 
 
 class CheckConfig(BaseModel):

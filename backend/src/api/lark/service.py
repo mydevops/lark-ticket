@@ -114,4 +114,4 @@ async def external_field(session: AsyncSession, approval_code: str, field_code: 
     """获取外部字段数据."""
     config: schema.Config = await ConfigModel.get(session, approval_code)
     _field_map = {item.code: item.url for item in config.field.data}
-    return util.do_get(_field_map.get(field_code, ""), params.linkage_params)
+    return util.do_post(_field_map.get(field_code, ""), params.dict())

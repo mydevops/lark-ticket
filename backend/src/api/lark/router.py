@@ -87,7 +87,7 @@ async def execute_callback(background_tasks: BackgroundTasks, params: schema.Lar
     return util.make_response_ok()
 
 
-@router.get("/field/{approval_code}/{field_code}")
+@router.post("/field/{approval_code}/{field_code}")
 async def external_field(
     approval_code: str,
     field_code: str,
