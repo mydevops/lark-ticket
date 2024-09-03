@@ -59,14 +59,14 @@ def register(app: FastAPI):
     Args:
         app: FastAPI 实例.
     """
-    app.add_middleware(ResponseTimeMiddleware)  # type: ignore
+    app.add_middleware(CatchExceptionsMiddleware)  # type: ignore
     if (
         settings.basic.debug is False
         and settings.alarm.open
         and settings.alarm.notification_type == enum.AlarmNotificationType.SENTRY
     ):
         app.add_middleware(SentryAsgiMiddleware)  # type: ignore
-    app.add_middleware(CatchExceptionsMiddleware)  # type: ignore
+    app.add_middleware(ResponseTimeMiddleware)  # type: ignore
 
     @app.exception_handler(RequestValidationError)
     async def validation_exception_handler(_: Any, exc: Any) -> ORJSONResponse:
